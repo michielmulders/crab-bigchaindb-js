@@ -1,0 +1,48 @@
+{
+  "name": "crab-tutorial-bigchaindb",
+  "version": "1.0.0",
+  "description": "CRAB Tutorial BigchainDB",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "nodemon src/app.js --exec babel-node",
+    "build": "npm run clean && babel src -d dist",
+    "serve": "node dist/app.js",
+    "test": "jest",
+    "clean": "rimraf ./dist"
+  },
+  "keywords": [
+    "ES6",
+    "Babel",
+    "Node"
+  ],
+  "author": "Michiel Mulders",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^21.0.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "jest": "^21.1.0",
+    "jest-junit-reporter": "^1.1.0",
+    "nodemon": "^1.12.1",
+    "rimraf": "^2.6.2"
+  },
+  "jest": {
+    "testResultsProcessor": "./node_modules/jest-junit-reporter",
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testMatch": [
+      "**/test/**/*.test.js"
+    ],
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "bigchaindb-driver": "^0.3.0",
+    "bigchaindb-orm": "^0.1.6",
+    "bip39": "^2.4.0"
+  }
+}
